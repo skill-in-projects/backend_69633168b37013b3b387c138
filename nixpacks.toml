@@ -1,0 +1,16 @@
+# Nixpacks configuration for Railway - Ruby/Sinatra Backend
+# Backend files are at root level
+# Note: Railway's Railpack will auto-detect Ruby version (3.4.6)
+
+[phases.install]
+cmds = [
+  "rm -f Gemfile.lock && bundle install"
+]
+
+[phases.build]
+cmds = [
+  "echo 'Build complete'"
+]
+
+[start]
+cmd = "bundle exec puma -C puma.rb config.ru"
